@@ -1,0 +1,655 @@
+/* -------- Global reset -------- */
+* {
+  box-sizing: border-box !important;
+  transition: color 0.2s ease, background 0.2s ease, border 0.2s ease;
+}
+
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: "Poppins", "Segoe UI", sans-serif !important;
+  background-color: #0f1418 !important;
+  color: #f5f5f5 !important;
+}
+/* High-specificity override for ALL select elements on Pinpoint */
+body select,
+html body select,
+form select,
+div select,
+select {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+
+  background-color: #1A1C1E !important;
+  border: 2px solid #3A3F44 !important;
+  border-radius: 12px !important;
+  padding: 14px 18px !important;
+  width: 100% !important;
+
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  color: #FFFFFF !important; /* forced white text */
+  line-height: 1.4 !important;
+
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' stroke='%23D0B57E' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 14px center !important;
+  background-size: 20px !important;
+
+  transition: border-color .2s ease, box-shadow .2s ease !important;
+
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.main-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+
+/* FORCE OVERRIDEEEE */
+font[color],
+font[color="black"],
+font[size],
+font {
+    color: #FFFFFF !important;
+}
+font b,
+font u,
+font * {
+    color: #FFFFFF !important;
+} /*appreciate chatgpt here*/
+		/*now continue*/
+
+/* Hover */
+body select:hover {
+  border-color: #D0B57E !important;
+}
+
+/* Focus */
+body select:focus {
+  border-color: #D0B57E !important;
+  box-shadow: 0 0 0 3px rgba(208,181,126,0.25) !important;
+}
+
+/* Fix for placeholder options */
+select option {
+  color: #FFFFFF !important;
+  background-color: #1A1C1E !important;
+}
+
+/* Ensure labels match white text */
+label,
+.form-label,
+.control-label {
+  color: #FFFFFF !important;
+}
+
+/* Some dropdowns are built using Bootstrap's .form-control... WHY??????? WHO DECIDED THIS?????*/
+.form-control,
+select.form-control {
+  background-color: #1A1C1E !important;
+  color: #FFFFFF !important;
+  border-radius: 12px !important;
+  border: 2px solid #3A3F44 !important;
+}
+/* Force visible text inside dropdown boxes */
+select option {
+    color: #FFFFFF !important;        /* Make option text white */
+    background-color: #1A1C1E !important; /* Match dark theme */
+}
+
+/* Some browsers require this to render text when closed */
+select {
+    color: #FFFFFF !important;        /* Visible selected text */
+}
+/*Nuclear ovveride please work, we be thanking gpt again*/
+/* Force visible text inside dropdown boxes */
+select option {
+    color: #FFFFFF !important;        /* Make option text white */
+    background-color: #1A1C1E !important; /* Match dark theme */
+}
+
+/* Some browsers require this to render text when closed */
+select {
+    color: #FFFFFF !important;        /* Visible selected text */
+}
+
+/* Fix placeholder-like first options */
+select option[disabled],
+select option[value=""],
+select option[value="0"] {
+    color: #BBBBBB !important; /* Light grey placeholder */
+}
+
+/* Fix placeholder-like first options */
+select option[disabled],
+select option[value=""],
+select option[value="0"] {
+    color: #BBBBBB !important; /* Light grey placeholder */
+}
+/* Force selected option to display correctly */
+select,
+select:focus,
+select:active {
+    color: #FFFFFF !important;                 /* Selected text visible */
+    -webkit-text-fill-color: #FFFFFF !important; /* Chrome/Edge forced text render */
+}
+
+/* Fix for Chromium where selected option inherits transparent text */
+select option:checked,
+select option[selected] {
+    color: #FFFFFF !important;
+    background-color: #1A1C1E !important;
+}
+
+/* Edge uses an internal pseudo-element for select text */
+select::-ms-value {
+    color: #FFFFFF !important;
+    background: none !important;
+}
+
+/* Additional Chromium pseudo-element */
+select::-internal-select-value {
+    color: #FFFFFF !important;
+}
+/* Force Chromium to render the internal text box vertically */
+select {
+    min-height: 56px !important;     /* Bigger ▼ height */
+    padding: 14px 20px !important;   /* Breathing room */
+    font-size: 18px !important;      /* Larger text ensures visibility */
+    line-height: 1.6 !important;     /* Forces rendering of internal value */
+    color: #FFFFFF !important;       /* Selected text */
+    -webkit-text-fill-color: #FFFFFF !important;
+}
+
+/* Ensure the selected option actually inherits the color */
+select option:checked {
+    color: #FFFFFF !important;
+}
+
+/* Fix edge cases */
+select::-ms-value {
+    color: #FFFFFF !important;
+}
+/* Core dropdown container */
+.dropdown-menu {
+    background-color: #002B3C !important; /* Corporate navy */
+    color: #ffffff !important;
+    border: none !important;
+    min-width: 220px; /* Upsized for enhanced visibility */
+    padding: 10px 0;
+}
+
+/* Dropdown items */
+.dropdown-menu > li > a {
+    color: #ffffff !important;
+    padding: 10px 20px;
+    font-size: 15px;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+    background-color: #D0B57E !important; /* Accent gold */
+    color: #002B3C !important;
+}
+
+/* Nested levels (multi-level menus) */
+.dropdown-submenu .dropdown-menu {
+    background-color: #002B3C !important;
+    border: none !important;
+}
+
+/* Optional – increase the hitbox for nested items */
+.dropdown-submenu > a::after {
+    border-left-color: #ffffff !important;
+}
+.your-container-class {
+    background: none !important;
+    background-color: transparent !important;
+}
+/* Reduce the massive vertical gaps everywhere */
+h1, h2 {
+  margin-top: 10px !important;
+  margin-bottom: 15px !important;
+}
+
+.form-group,
+.row,
+.col-md-4,
+.col-md-12 {
+  margin-bottom: 16px !important;
+}
+
+.container,
+.main,
+body {
+  padding-top: 10px !important;
+}
+label {
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  color: #f7f0df !important;
+}
+
+/* Match dropdowns to your gold theme */
+select,
+input[type="text"],
+input[type="number"],
+.form-control {
+  background: #1b1f23 !important;
+  color: #e6dcc5 !important;
+  border: 1px solid rgba(208,181,126,0.3) !important;
+  border-radius: 10px !important;
+  padding: 10px 14px !important;
+}
+
+select:focus,
+input:focus {
+  border-color: #d0b57e !important;
+  box-shadow: 0 0 0 2px rgba(208,181,126,0.35) !important;
+}
+/* Keep date fields compact and in one row */
+.date-row .col-md-4 {
+  flex: 1 !important;
+  max-width: 160px !important;
+}
+
+.date-row select {
+  width: 100% !important;
+}
+/* Make titles smaller but strong */
+h1 {
+  font-size: 2.2rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 20px !important;
+}
+
+h2 {
+  font-size: 1.35rem !important;
+  margin-top: 12px !important;
+  margin-bottom: 8px !important;
+  color: #e6dcc5 !important;
+  font-weight: 700 !important;
+}
+button,
+.btn {
+  background: linear-gradient(180deg, #d7c08a, #bfa46d) !important;
+  border: none !important;
+  color: #1b1b1b !important;
+  font-weight: 700 !important;
+  padding: 10px 24px !important;
+  border-radius: 10px !important;
+  transition: transform 0.15s ease, background 0.2s ease !important;
+}
+
+
+
+/* -------- Layout containers -------- */
+div, section, article, main, aside {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+/* Remove legacy blue banner styling */
+.header,
+.page-title,
+.topcontainer,
+#topcontainer,
+.banner,
+.headerblue {
+    background: none !important;
+    background-color: transparent !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+}
+/* Footer enhancement branding */
+#footer, footer {
+    position: relative;
+}
+
+#ppplus-branding {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #D0B57E !important;       /* Your gold accent */
+    opacity: 0.85;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+/* Left branding area (logo + title) */
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #D0B57E !important;
+}
+.header-brand img {
+  height: 28px;
+  width: 28px;
+  object-fit: contain;
+  filter: brightness(1.2);
+}
+
+/* -------- Header / Nav -------- */
+/* --- Modern Glass Header --- */
+/* Header */
+header, .navbar, .topbar {
+  background: linear-gradient(
+      to bottom,
+      #1b1f23 0%,
+      #121518 60%,
+      #0f1418 100%
+    ) !important;
+
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+
+  padding: 14px 24px !important;
+
+  /* Stronger separation line */
+  border-bottom: 2px solid rgba(208, 181, 126, 0.25) !important;
+
+  box-shadow: 
+    0 2px 6px rgba(0, 0, 0, 0.45),
+    0 4px 14px rgba(208,181,126,0.06) !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+/* Make the parent act like a vertical flex container */
+body, .container, .main-content, .row, .col-md-8 {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Move the button + list-group ABOVE */
+.btn.btn-lg.btn-danger.btn-circle,
+.list-group {
+    order: 1 !important;
+}
+
+/* Move the alert + table BELOW */
+.alert-success,
+table {
+    order: 2 !important;
+}
+/* Target the specific section that contains these elements */
+.col-md-8 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important; /* keeps spacing natural */
+}
+
+/* Move button + list-group to the top */
+.col-md-8 a[href*="Questions_newwer"],
+.col-md-8 .list-group {
+    order: 1 !important;
+}
+
+/* Move alert + table to the middle */
+.col-md-8 .alert-success,
+.col-md-8 table {
+    order: 2 !important;
+}
+
+/* Move videos BELOW everything else */
+.col-md-8 iframe,
+.col-md-8 video,
+.col-md-8 .video-section {
+    order: 3 !important;
+}
+
+/* NAV LINKS — bold + slightly brighter */
+header a, 
+.navbar a, 
+.topbar a, 
+nav a,
+.nav-link {
+  font-weight: 600 !important;
+  color: #E3D8C0 !important;       /* Slightly lighter gold-white */
+  text-decoration: none !important;
+}
+
+/* Hover for nav links */
+header a:hover, 
+nav a:hover,
+.nav-link:hover {
+  color: #D0B57E !important;       /* your gold highlight */
+}
+
+
+
+
+  border-bottom: 2px solid rgba(208,181,126,0.25) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+header, .navbar, .topbar {
+  box-shadow: 0 2px 12px rgba(0,0,0,0.4) !important;
+}
+
+header a, .navbar a {
+  color: #a0a0a0 !important;
+  text-decoration: none !important;
+  background: none !important;
+  border: none !important;
+  padding: 0.5rem 1rem !important;
+  font-weight: 500 !important;
+}
+
+header a:hover, .navbar a:hover {
+  background: rgba(208,181,126,0.15) !important;
+  border-radius: 6px !important;
+}
+
+/* Remove any black highlight or boxes that may wrap nav items */
+.navbar li, .navbar .active, nav li {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+/* Modern form controls */
+input[type="number"],
+input[type="text"],
+select {
+    background: #1b1c1e;
+    color: #ffffff;
+    border: 1px solid #3b3d40;
+    border-radius: 10px;
+    padding: 10px 14px;
+    width: 100%;
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover + Focus states */
+input[type="number"]:focus,
+input[type="text"]:focus,
+select:focus {
+    border-color: #D0B57E !important;
+    box-shadow: 0 0 0 3px rgba(208, 181, 126, 0.25) !important;
+    outline: none !important;
+}
+.jumbotron {
+    background: none !important;
+    background-image: none !important;
+    background-color: transparent !important;
+}
+*[style*="bg5.png"] {
+    background: none !important;
+    background-image: none !important;
+}
+
+/* -------- Buttons -------- */
+button, input[type="submit"], .btn {
+  background: linear-gradient(135deg, #d0b57e, #e6cf98) !important;
+  color: #002B3C !important;
+  border-radius: 10px !important;
+  padding: 12px 18px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.35) !important;
+  transition: transform .2s ease, box-shadow .2s ease !important;
+}
+
+button:hover, .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.45) !important;
+}
+
+select {
+  max-width: 360px !important;
+  padding: 12px 14px !important;
+  font-size: 15px !important;
+  border-radius: 8px !important;
+}
+.section {
+  margin-top: 40px !important;
+  margin-bottom: 40px !important;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* -------- Cards / Panels -------- */
+.card, .panel, .module {
+  background: #1c2227 !important;
+  color: #eee !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.5) !important;
+  padding: 1.5rem !important;
+  margin: 1rem 0 !important;
+}
+
+/* -------- Tables -------- */
+table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+  background: #1c2227 !important;
+  color: #f5f5f5 !important;
+}
+th {
+  background-color: #002B3C !important;
+  color: #D0B57E !important;
+  text-align: left;
+  padding: 12px 16px !important;
+}
+td {
+  padding: 10px 16px !important;
+  border-bottom: 1px solid #2e373d !important;
+}
+tr:hover td {
+  background-color: #222b31 !important;
+}
+
+/* -------- Forms -------- */
+input[type="text"], input[type="email"], input[type="password"], select, textarea {
+  background: #151b1f !important;
+  color: #f5f5f5 !important;
+  border: 1px solid #364046 !important;
+  border-radius: 6px !important;
+  padding: 10px 12px !important;
+  width: 100% !important;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: #D0B57E !important;
+  box-shadow: 0 0 0 2px rgba(208,181,126,0.3);
+  outline: none !important;
+}
+
+/* -------- Footer -------- */
+footer {
+  background-color: #002B3C !important;
+  color: #D0B57E !important;
+  text-align: center;
+  padding: 1.5rem !important;
+  border-top: 2px solid rgba(208,181,126,0.3);
+}
+
+/* -------- Misc cleanup -------- */
+img, svg, canvas {
+  filter: brightness(0.9) !important;
+}
+
+hr {
+  border: none !important;
+  border-top: 1px solid #364046 !important;
+}
+
+a {
+  color: #D0B57E !important;
+}
+a:hover {
+  color: #e7d29f !important;
+}
+
+/* Smooth fade for appearance */
+@keyframes fadeIn {
+  from {opacity:0; transform:translateY(10px);}
+  to {opacity:1; transform:translateY(0);}
+}
+body {
+  animation: fadeIn 0.4s ease forwards;
+}
+/* Modern unified select styling */
+select {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+
+  width: 100% !important;
+  padding: 14px 18px !important;
+  background-color: #1c1f21 !important;
+  border: 1px solid #3a3f44 !important;
+  border-radius: 10px !important;
+  font-size: 16px !important;
+  color: #ffffff !important;
+
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none !important;
+
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23D0B57E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 16px center !important;
+}
+
+/* Hover state */
+select:hover {
+  border-color: #D0B57E !important;
+}
+
+/* Focus state */
+select:focus {
+  border-color: #D0B57E !important;
+  box-shadow: 0 0 0 3px rgba(208, 181, 126, 0.25) !important;
+}
+
+/* Disabled options (for placeholder text) */
+select option[value=""][disabled], 
+select option[disabled] {
+  color: #888 !important;
+}
+
+/* Make all form groups consistent */
+label {
+  font-weight: 600 !important;
+  font-size: 20px !important;
+  color: #F5F5F5 !important;
+  margin-bottom: 6px !important;
+  display: block !important;
+}
+

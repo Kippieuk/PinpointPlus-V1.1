@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "PinpointPlus",
+  "version": "5.7",
+  "description": "Make Pinpoint Learning visually appealing!",
+  "content_scripts": [
+    {
+      "matches": ["https://www.pinpointlearning.co.uk/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "icons": {
+    "128": "icons/icon128.png"
+  }
+}
