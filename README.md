@@ -11,13 +11,15 @@ Extract the ZIP file to a permanent location on your PC
 
 ⚠ Important: Do not delete this folder after installation. Microsoft Edge loads the extension directly from this location.
 
-🌐 Step 2: Open the Extensions Page in Edge
+🌐 Step 2: Open the Extensions Page in your browser.
 
-Open Microsoft Edge.
+Open your browser.
 
 In the address bar, enter:
 
-edge://extensions
+browser://extensions
+OR
+go to options and select extensions
 
 🛠 Step 3: Enable Developer Mode
 
